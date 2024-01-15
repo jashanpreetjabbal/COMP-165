@@ -1,1 +1,2 @@
-this is my hello world code.
+first code for ther repo
+
