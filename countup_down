@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Using JS variables and functions to count up and down</title>
+        <script>
+            let count = 0;
+
+            function count_up() {
+                count = count + 1;
+                alert(count);
+            
+            if (count % 5 === 0) {
+
+                alert(" you have reached 5 which is divisible by 5.");
+                
+            }
+            if (count === 5) {
+                count = 0;
+            }
+        }
+        count = 0;
+        function count_down() {
+            if (count > 0) {
+            count = count - 1;
+            alert(count)
+                if (count % 5 === 0) {
+                alert("you have reached 0 which is also divisible by zero");
+                count = 0;
+                }
+            }
+            else {
+                alert("Negative numbers");
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <p>Counting 0 to 5 to check divisibility by 5</p>
+        <button onclick="count_up()">Count up</button>
+        <button onclick="count_down()"> count down</button>
+    </body>
+</html>
+
