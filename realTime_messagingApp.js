@@ -14,7 +14,7 @@ async  function submitForm() {
         feedback: feedback
         };
         try {
-            const response = await fetch('https://feb13-lab6-default-rtdb.firebaseio.com/msg.json', {
+            const response = await fetch('https://comp-165-default-rtdb.firebaseio.com/msg.json', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ async  function submitForm() {
     //submitForm.style.display = 'none';
     messages.style.display = 'block';
    }
-   const databaseRef = new EventSource('https://feb13-lab6-default-rtdb.firebaseio.com/msg.json');
+   const databaseRef = new EventSource('https://comp-165-default-rtdb.firebaseio.com/msg.json');
          databaseRef.addEventListener('put', async (event) => {
              try {
                  const newData = JSON.parse(event.data);
@@ -64,7 +64,7 @@ async function hideFormFetchDataWithAsyncAwait() {
     // 'https://lab6-165-default-rtdb.firebaseio.com/msg.json'
     // And present the data on the webpage.
     try {
-        const response = await fetch('https://feb13-lab6-default-rtdb.firebaseio.com/msg.json');
+        const response = await fetch('https://comp-165-default-rtdb.firebaseio.com/msg.json');
         const data = await response.json();
         const dataContainer = document.querySelector('#messages');
         dataContainer.innerHTML = "<h2>Messages</h2>";
@@ -81,7 +81,7 @@ async function hideFormFetchDataWithAsyncAwait() {
 }
 
         // Subscribe to real-time updates
-    const datatbaseRef = new EventSource('https://feb13-lab6-default-rtdb.firebaseio.com/msg.json');
+    const datatbaseRef = new EventSource('https://comp-165-default-rtdb.firebaseio.com/msg.json');
         databaseRef.addEventListener('put', async (event) => {
              try {
                  const newData = JSON.parse(event.data);
