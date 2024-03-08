@@ -3,9 +3,161 @@
 <head>
     <title>My personal portfolio file</title>
     <style>
-        body {
-            background-color: teal;
-        }
+        /* Resetting default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #FF6B6B; /* Coral Red */
+    --secondary-color: #70C1B3; /* Greenish Blue */
+    --accent-color: #FFCC5C; /* Mustard Yellow */
+    --text-color: #333; /* Blackish */
+    --background-color: #F9F9F9; /* Light Gray */
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 24px;
+}
+
+h3 {
+    color: var(--accent-color);
+    font-size: 20px;
+}
+
+h4 {
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+/* Paragraph Styles */
+p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Anchor styles */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Audio controls */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Hover effects */
+.container a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.container a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.container a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.container img:hover {
+    opacity: 0.8;
+}
+
+.container li:hover {
+    color: var(--primary-color);
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
     </style>
 </head>
 <body>
@@ -19,7 +171,7 @@
         </tr>
     </table>
     <h2><b>Games which i like to play</b></h2>
-    <ul>
+   <ul>
         <li>badminton</li>
         <li>athletics
             <ol>
