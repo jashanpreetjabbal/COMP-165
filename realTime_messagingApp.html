@@ -2,30 +2,262 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Submit Information to Firebase Storage</title>
-    <script src="realTime_messagingApp.js" ></script>
-        
-    
+    <title>Real-time Chat Application</title>
+    <style>
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+/* Header Styles */
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #075e54; /* WhatsApp Green */
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Announcement Area Styles */
+#announce_area {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #25d366; /* WhatsApp Green */
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* WhatsApp-like shadow */
+}
+
+/* Input and Select Styles */
+input[type="text"],
+select {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #ccc; /* WhatsApp Gray */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #4caf50; /* WhatsApp Green */
+}
+
+/* Button Styles */
+button {
+    padding: 12px 25px;
+    background-color: #4caf50; /* WhatsApp Green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #44a049; /* Darker shade of WhatsApp Green */
+}
+
+/* Messages Container Styles */
+#messages {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff; /* White */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* WhatsApp-like shadow */
+    overflow-y: auto;
+    max-height: 400px; /* Adjust as needed */
+}
+
+/* Individual Message Styles */
+#messages p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow */
+}
+
+/* Message Style Variations */
+#messages p:nth-child(odd) {
+    background-color: #dcf8c6; /* WhatsApp Light Green */
+}
+
+#messages p:nth-child(even) {
+    background-color: #f5f5f5; /* Light Gray */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    input[type="text"],
+    select,
+    button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+    </style>
+    <script type="module">
+        const databaseUrl = 'https://comp-165-default-rtdb.firebaseio.com//chatMsg.json';
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('button').onclick = sendMessage;
+            displayAllMessages();
+        });
+        async function sendMessage() {
+            const usernameInput = document.querySelector('#username');
+            const messageInput = document.querySelector('#message');
+            const messageCategory = document.querySelector('#category');
+
+            const username = usernameInput.value;
+            const message = messageInput.value;
+            const category = messageCategory.value;
+
+            if (username || message) {
+                const timestamp = new Date();
+                const data = { username, message, timestamp, category};
+
+                try {
+                    const response = await fetch(databaseUrl, {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to send message');
+                    }
+                    messageInput.value = '';
+                    usernameInput.value = '';
+                    messageCategory.value = 'general';
+                } catch (error) {
+                    console.error('Error sending message:', error);
+                }
+            }
+        }
+
+        async function displayAllMessages() {
+            try {
+                const response = await fetch(databaseUrl);
+                const data = await response.json();
+                const dataContainer = document.querySelector('#messages');
+                dataContainer.innerHTML = "<h2>Messages</h2>";
+
+                const announceContainer = document.querySelector('#announce_area');
+                let latestAnnouncement = null; 
+
+                for (const postId in data) {
+                    const post = data[postId];
+                    const timestamp = post.timestamp;
+                    const time = new Date(timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                    if (post.category == 'priority') {
+                        dataContainer.innerHTML += `<p>Priority</p>`;
+                    } else if (post.category == 'announcement') { 
+                        latestAnnouncement = post; 
+                    } else {
+                        dataContainer.innerHTML += `
+                        <p>${time}</p>
+                        <p><u><strong>${post.username}</strong></u>:
+                            <strong>${post.message}</strong></p><br>
+                        `;
+                    }
+                } 
+
+                if (latestAnnouncement) {
+                    
+                    const announceTime = new Date(latestAnnouncement.timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                    announceContainer.innerHTML = `
+                    <h2>Latest Announcement</h2>
+                    <p>${announceTime}</p>
+                    <p><u><strong>${latestAnnouncement.username}</strong></u>:
+                        <strong>${latestAnnouncement.message}</strong></p>
+                    `;
+                    
+                    const announceTimeForMessages = new Date(latestAnnouncement.timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                    dataContainer.innerHTML += `
+                    <p>${announceTimeForMessages}</p>
+                    <p><u><strong>${latestAnnouncement.username}</strong></u>:
+                        <strong>${latestAnnouncement.message}</strong></p><br>
+                    `;
+                } else {
+                    announceContainer.innerHTML = ""; 
+                }
+                
+                const databaseRef = new EventSource(databaseUrl);
+                databaseRef.addEventListener('put', async (event) => {
+                    try {
+                        const newData = JSON.parse(event.data);
+                        const messageData = newData.data;
+                        const time = new Date(messageData.timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                        if (messageData.category == 'priority') {
+                            dataContainer.innerHTML += `<p>Priority</p>`;
+                        } else if (messageData.category == 'announcement') {
+                            latestAnnouncement = messageData; 
+                            
+                            const announceTime = new Date(latestAnnouncement.timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                            announceContainer.innerHTML = `
+                            <h2>Latest Announcement</h2>
+                            <p>${announceTime}</p>
+                            <p><u><strong>${latestAnnouncement.username}</strong></u>:
+                                <strong>${latestAnnouncement.message}</strong></p>
+                            `;
+                            
+                            const announceTimeForMessages = new Date(latestAnnouncement.timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                            dataContainer.innerHTML += `
+                            <p>${announceTimeForMessages}</p>
+                            <p><u><strong>${latestAnnouncement.username}</strong></u>:
+                                <strong>${latestAnnouncement.message}</strong></p><br>
+                            `;
+                        } else {
+                            if (messageData.username || messageData.message) { 
+                                dataContainer.innerHTML += `
+                                <p>${time}</p>
+                                <p><u><strong>${messageData.username}</strong></u>:
+                                    <strong>${messageData.message}</strong></p><br>
+                                `;
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error handling real-time update:', error);
+                    }
+                });
+            } catch (error) {
+                throw new Error('Error fetching data:', error);
+            }
+        }
+    </script>
 </head>
 <body>
-    <div id="submitForm">
-        <h1>Hi, COMP165!</h1>
-        <div class="form-group">
-            <label for="name">Name (Optional):</label>
-            <input type="text" id="name" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-            <label for="feedback">Message:</label>
-            <textarea id="feedback" rows="6" maxlength="500" placeholder="Write whatever you want to say"></textarea>
-        </div>
-        <button id="submitButton">Submit</button>
-    
-
-         <div id="messages">
-        <h1>You need to show the messages here</h1>
-    </div>
+        <h1>Real-time Chat Application</h1>
+        <div id="announce_area"></div> 
         <div>
-            <h1> <a href="jashanpreetjabbal.github.io/index.html" target="" > click here to get back to home </a></h1>
+            <input type="text" id="username" placeholder="Enter your username">
+            <input type="text" id="message" placeholder="Enter your message">
+            <select id="category">
+                <option value="general">General</option>
+                <option value="priority">Priority</option>
+                <option value="announcement">Announcement</option> 
+            </select>
+            
+            <button>Send</button>
         </div>
+        <div id="messages"></div>
 </body>
 </html>
