@@ -1,4 +1,6 @@
 const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const videoContainer = document.querySelector('.video-container');
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('models'),
@@ -16,15 +18,16 @@ async function startVideo() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ video: {} });
     video.srcObject = stream;
+    video.addEventListener('loadedmetadata', () => {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+    });
   } catch (err) {
     console.error(err);
   }
 }
 
-
 video.addEventListener('play', () => {
-  const canvas = faceapi.createCanvasFromMedia(video);
-  document.body.append(canvas);
   const displaySize = { width: video.width, height: video.height };
   faceapi.matchDimensions(canvas, displaySize);
   setInterval(async () => {
