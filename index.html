@@ -1,220 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My personal portfolio file</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
-        /* Resetting default margin and padding */
-html, body {
-    margin: 0;
-    padding: 0;
-}
+        /* Additional custom styles */
+        .full-height {
+            min-height: calc(100vh - 4rem); /* Adjust for navbar height */
+        }
+        .coding-font {
+            font-family: 'Fira Code', monospace;
+            font-size: 2rem;
+            color: #68D391; /* Green color for coding font */
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Add a subtle shadow effect */
+        }
+        @keyframes dot-animation {
+            0%, 25% { content: "."; }
+            50% { content: ".."; }
+            75% { content: "..."; }
+            100% { content: "."}
+        }
 
-/* Color Palette */
-:root {
-    --primary-color: #FF6B6B; /* Coral Red */
-    --secondary-color: #70C1B3; /* Greenish Blue */
-    --accent-color: #FFCC5C; /* Mustard Yellow */
-    --text-color: #333; /* Blackish */
-    --background-color: #F9F9F9; /* Light Gray */
-}
-
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Heading Styles */
-h1 {
-    color: var(--primary-color);
-    font-size: 28px;
-}
-
-h2 {
-    color: var(--secondary-color);
-    font-size: 24px;
-}
-
-h3 {
-    color: var(--accent-color);
-    font-size: 20px;
-}
-
-h4 {
-    color: var(--text-color);
-    font-size: 18px;
-}
-
-/* Paragraph Styles */
-p {
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-/* List Styles */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 5px;
-}
-
-/* Anchor styles */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Audio controls */
-audio {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td, th {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-/* Hover effects */
-.container a {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.container a::before {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--primary-color);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-}
-
-.container a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-.container img:hover {
-    opacity: 0.8;
-}
-
-.container li:hover {
-    color: var(--primary-color);
-}
-
-/* Button styles */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--secondary-color);
-}
-
+        .dots::after {
+            display: inline-block;
+            content: ".";
+            animation: dot-animation 2s infinite steps(1);
+        }
     </style>
 </head>
-<body>
-    
-    <table>
-        <tr>
-            <td>
-                <h1>Hello online visitor,</h1>
-                <p> I'm Jashanpreet Singh, a dedicated and passionate student with a keen interest in computing science (my major) currently studying Associate of Science at Capilano University (CapU). I also love to discuss geopolitics during my free time (basically gossip). The phrase "Jack of all trades, master of none" describes me best but not for long as I am quite concentrated on my studies. I am good in Python, C, and C++ and my next goal is to start with DSA in Python from spring '24. I have also started with the MERN stack for my web development journey. My passions and interests include all the athletic things like trekking, but as I have lived most of my life in suburban plains in India, I had to take long rides on my bicycle to get to a lower range of Himalayas (I could go by public transport, but it's not fun!). Some of my achievements are that I am currently serving as Chairperson of the Governance Committee at Capilano Student Union, and in my role, I frequently review the policies and host meetings as a mediator. I'm also one of the founding members and Secretary of Capilano Computing Science Student Society.</p>
-            </td>
-        </tr>
-    </table>
-    <h2><b>Games which i like to play</b></h2>
-   <ul>
-        <li>badminton</li>
-        <li>athletics
-            <ol>
-                <li> marathon running</li>
-                <li> 400m relay</li>
-            </ol>
-        </li>
-        <li> <a href="https://en.wikipedia.org/wiki/Gatka" target="_blank"> sikh martial arts</a></li>
-        <li>ice skating</li>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Veit_Dubiel_2008-11-02.jpg" width="200" height="200" >  
-    </ul>
-    <h3> COMP165</h3>
-    <p> The below link is to the second page of this portfolio:
-        <ul>
-            <li> <a href="https://jashanpreetjabbal.github.io/index1.html" target=""> click here to access lab2/ adding other webpage</a></li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/countup_down.html" target=""> click here to access lab3/ counting Up and Down</a></li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/scientific_calculator.html" target=""> click here to access lab4/Scientific Calculator</a></li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/weatherAppApi.html" target=""> click here to access lab5/weather App Api</a> </li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/realTime_messagingApp.html" target=""> click here to access lab6/ realtime messaging app </a></li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/lab7.html" target=""> click here to access lab7 </a></li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/e-commerce.html" target=""> click here to access lab8/ e-commerce website</a></li>
-            <br>
-            <li> <a href="https://jashanpreetjabbal.github.io/Face Expression Detection/index.html" target=""> click here to access Project 1 </a></li>
-            <br>
+<body class="bg-gray-900 text-white flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-xl font-bold">MyWebsite</a>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="text-white">Home</a></li>
+                <li><a href="labs.html" class="text-white">Labs</a></li>
+                <li><a href="#" class="text-white">Projects</a></li>
+                <li><a href="#" class="text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="flex-1 full-height flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-6xl font-bold mb-4">Hello Online Visitor,</h1>
+            <h2 class="text-4xl font-bold mb-8">my name is <span class="italic-text">Jashanpreet Singh</span></h2>
+            <!-- Optional: Add cool effects using Tailwind CSS classes -->
+            <div class="coding-font">Welcome to my world<span class="dots"></span></div>
+        </div>
+    </div>
+
+    <!-- Labs Section -->
+   
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+        <!-- Social Icons -->
+        <ul class="flex justify-center space-x-4">
+            <li><a href="https://github.com/jashanpreetjabbal" class="text-white"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/jashanpreet-singh-b9570b25a/" class="text-white"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://mastodon.social/@callmejashan" class="text-white"><i class="fab fa-mastodon"></i></a></li>
+            <li><a href="mailto:jashanpreetjabbal@gmail.com" class="text-white"><i class="fas fa-envelope"></i></a></li>
         </ul>
-    <h4>Below is the link to the song Perfect </h4>
-    <audio controls>
-        <source src="https://cdn.celebnob.com/uploads/music/2023/11/Ed-Sheeran-Perfect-(Celebnob.com).mp3?_=1" type="audio/mp3">
-        Perfect by Ed Sheeran. 
-    </audio>
-    <ol style="font-size:45px">
-     <li style="font-size:18px">what do you mean that this portfolio is not good enough</li
-    <li>&nbsp;&#128128;</li>
-    <li>&le;))&ge;</li>
-    <li>_| \_</li>
-        </ol>
-    </p>
-    
+        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+    </div>
+</footer>
+
 </body>
 </html>
