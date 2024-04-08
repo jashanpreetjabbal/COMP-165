@@ -4,74 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <link rel="icon" href="https://i.pinimg.com/originals/95/d1/63/95d163e15f20f8e6fdedb80d31625633.png" type="image/x-icon">
+    <link href="https://fonts.google.com/specimen/Playfair+Display" rel="stylesheet" >
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <style>
-        
+        /* Additional custom styles */
         .full-height {
-            min-height: calc(100vh - 4rem); 
+            min-height: calc(100vh - 4rem); /* Adjust for navbar height */
         }
         .coding-font {
             font-family: 'Fira Code', monospace;
             font-size: 2rem;
-            color: #68D391; 
-            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); 
+            color: #68D391; /* Green color for coding font */
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Add a subtle shadow effect */
         }
         @keyframes dot-animation {
-            0%, 25% { content: "."; }
-            50% { content: ".."; }
-            75% { content: "..."; }
-            100% { content: "."}
+            0%{ content: "."; }
+            9.5% { content: ".."; }
+            19% { content: "..."; }
+            35% { content: "... <"}
+            46% {content: "... </"}
+            58%{content: "... </d"}
+            72%{content: "... </di"}
+            83% {content: "... </div"}
+            92% {content: "... </div>"}
+            100%  {content: "... </div>"}
         }
 
         .dots::after {
             display: inline-block;
             content: ".";
-            animation: dot-animation 2s infinite steps(1);
+            animation: dot-animation 4.5s infinite steps(1);
         }
     </style>
 </head>
 <body class="bg-gray-900 text-white flex flex-col">
-    
+    <!-- Navbar -->
     <nav class="bg-gray-800 py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-white text-xl font-bold">Jashanpreet Singh</a>
+            <a href="#" class="font-playfair text-white text-xl font-bold">Jashanpreet Singh</a>
             <ul class="flex space-x-4">
                 <li><a href="#" class="text-white">Home</a></li>
                 <li><a href="labs.html" class="text-white">Labs</a></li>
-                <li><a href="#" class="text-white">Projects</a></li>
-                <li><a href="#" class="text-white">Contact</a></li>
+                <li><a href="projects.html" class="text-white">Projects</a></li>
+                <li><a href="#contact" class="text-white">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    
-    <div class="flex-1 full-height flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-6xl font-bold mb-4">Hello Online Visitor,</h1>
-            <h2 class="text-4xl font-bold mb-8">my name is <span class="italic-text">Jashanpreet Singh</span></h2>
-            <!-- Optional: Add cool effects using Tailwind CSS classes -->
+    <!-- Content -->
+    <div class="flex-1 flex full-height items-center">
+        <div class=" mx-auto ml-8"> 
+            <h1 class="text-6xl text-white font-bold mb-4">Hello Online Visitor,</h1>
+            <h2 class="text-4xl text-white font-bold mb-8">my name is <i>Jashanpreet Singh</i></h2>
             <div class="coding-font">Welcome to my world<span class="dots"></span></div>
         </div>
     </div>
+    <!-- <div class="flex-1 full-height flex items-center">
+        <div class="mx-auto ml-4">
+            <h1 class=" text-6xl text-black font-bold mb-4">Hello Online Visitor,</h1>
+            <h2 class="text-4xl text-black font-bold mb-8">my name is <span class="italic-text">Jashanpreet Singh</span></h2>
+            <div class="coding-font">Welcome to my world<span class="dots"></span></div>
+        </div>
+    </div> -->
 
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <!-- Social Icons -->
+            <ul class="flex justify-center space-x-4">
+                <li><a href="https://github.com/jashanpreetjabbal" class="text-white text-2xl"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jashanpreet-singh-b9570b25a/" class="text-white text-2xl"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://mastodon.social/@callmejashan" class="text-white text-2xl"><i class="fab fa-mastodon"></i></a></li>
+                <li><a id="contact" href="mailto:jashanpreetjabbal@gmail.com" class="text-white text-2xl"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            <p>&copy; 2024 Jashanpreet Singh. All rights reserved.</p>
+        </div>
+    </footer>
     
-   
-
-    
-<footer class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto text-center">
-        
-        <ul class="flex justify-center space-x-4">
-            <li><a href="https://github.com/jashanpreetjabbal" class="text-white"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/jashanpreet-singh-b9570b25a/" class="text-white"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://mastodon.social/@callmejashan" class="text-white"><i class="fab fa-mastodon"></i></a></li>
-            <li><a href="mailto:jashanpreetjabbal@gmail.com" class="text-white"><i class="fas fa-envelope"></i></a></li>
-        </ul>
-        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
-    </div>
-</footer>
-
 </body>
 </html>
