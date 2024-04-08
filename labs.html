@@ -19,13 +19,17 @@
     width: 100%; 
     height: auto; 
     max-width: 100%; 
-    max-height: 100%; 
+    max-height: 90%; 
 }
+.labs:hover {
+            transform: scale(1.05);
+            transition: background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
     </style>
 </head>
 <body>
-    
+   
     <nav class="bg-gray-800 py-4">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-white text-xl font-bold">MyWebsite</a>
@@ -35,62 +39,62 @@
             </ul>
         </div>
     </nav>
-    <section class="bg-gray-900 text-white py-20 flex items-center justify-center">
+    <section class="bg-gray-900 text-white full-height py-20 flex items-center justify-center">
         <div class="text-center">
             <h1 class="text-5xl font-bold mb-4 labs-heading">Labs of COMP165: Fundamentals of Web Programming</h1>
             <p class="text-xl">Explore my labs below:</p>
         </div>
     </section>
 
-    <section class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+    <section class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 ">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
                 <a href="https://jashanpreetjabbal.github.io/index1.html" target="_blank" rel="noopener noreferrer">
                     <img src="https://lh6.googleusercontent.com/D_Wbe5aldnjGaq7tHl0GEo0OQ_xkYz-whtSn9qALkXAeeeIzxABPEikEE9Rt6YYR_0I5IbdeUqxM1hvkFr1dw72WHHNTpY6yjJrzzoVoV3yn6JxCfukxCQWFf4dfmRbt4e84baFz" alt="Lab 1" class="lab-img mb-4">
-                <p class="text-lg font-semibold">Lab 1</p>
+                <p class="text-lg font-semibold">Connecting another web page</p>
                 </a>
             </div>
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
                 <a href="https://jashanpreetjabbal.github.io/countup_down.html" target="_blank" rel="noopener noreferrer">
                     <img src="https://i.ytimg.com/vi/RCVwM9Sblnc/maxresdefault.jpg" alt="Lab 2" class="lab-img mb-4">
-                <p class="text-lg font-semibold">Lab 2</p>
+                <p class="text-lg font-semibold">Count up/down</p>
                 </a>
             </div>
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
                 <a href="https://jashanpreetjabbal.github.io/scientific_calculator.html" target="_blank" rel="noopener noreferrer">
                     <img src="https://www.codehim.com/wp-content/uploads/2021/12/html-code-for-scientific-calculator.png" alt="Lab 3" class="lab-img mb-4">
-                <p class="text-lg font-semibold">Lab 3</p>
+                <p class="text-lg font-semibold">Scientific Calculator</p>
                 </a>
             </div>
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
                 <a href="https://jashanpreetjabbal.github.io/weatherAppApi.html" target="_blank" rel="noopener noreferrer">
                     <img src="https://i.ytimg.com/vi/MIYQR-Ybrn4/maxresdefault.jpg" alt="Lab 4" class="lab-img mb-4">
-                <p class="text-lg font-semibold">Lab 4</p>
+                <p class="text-lg font-semibold">Weather App using API</p>
                 </a>
             </div>
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
                 <a href="https://jashanpreetjabbal.github.io/realTime_messagingApp.html" target="_blank" rel="noopener noreferrer">
                 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230630094019/Reacl-Time-Chat-Application.png" alt="Lab 5" class="lab-img mb-4">
-                <p class="text-lg font-semibold">Lab 5</p>
+                <p class="text-lg font-semibold">RealTime messagingApp using Firebase</p>
             </a>
             </div>
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
                 <a href="https://jashanpreetjabbal.github.io/lab7.html" target="_blank" rel="noopener noreferrer">
                     <img src="data:image/png;base64,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" alt="Lab 6" class="lab-img mx-auto mb-4">
                 <p class="text-lg font-semibold">Lab 6</p>
                 </a>
             </div>
-            <div class="bg-gray-700 rounded-lg p-4 text-center">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs ">
                 <a href="https://jashanpreetjabbal.github.io/e-commerce.html" target="_blank" rel="noopener noreferrer">
                     <img src="https://repository-images.githubusercontent.com/456963513/82528385-a73f-488f-9003-513321283a6b" alt="Lab 7" class="lab-img mb-4">
-                <p class="text-lg font-semibold">Lab 7</p>
+                <p class="text-lg font-semibold">E-commerce using Firebase</p>
                 </a>
             </div>
             
         </div>
     </section>
 
-    
+   
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 MyWebsite. All rights reserved.</p>
