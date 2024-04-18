@@ -1,26 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat";
+  font-size: 20px;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200vh;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  height: 200vh;
+  background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Specify the URL of your image */
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+     
 }
 
 h1 {
-    margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.322);
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
 .video-container {
-    position: relative;
+  position: relative;
+  width: 50%;
+  height: auto;
 }
 
 #video, #canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+  position: absolute;
+  top: 200px;
+  left: 39%;
+  transform: translateX(-25%);
+  width: 40%;
+  height: 60%;
+  border-radius:12px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+#startRecording {
+  margin-right: 20px;
+  background-color: #00ff22;
+  width: 20%;
+  transform: translateX(200%);
+}
+
+#endRecording {
+  background-color: #f44336;
+  width: 20%;
+  transform: translateX(200%);
 }
