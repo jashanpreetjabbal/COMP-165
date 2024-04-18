@@ -15,21 +15,16 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: normal;
+  align-items: center; /* Center horizontally */
   justify-content: center;
-  height: 200vh;
-  background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Specify the URL of your image */
+  height: 100vh; /* Change to a smaller value */
+  background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: cover;
   background-position: center; 
   background-repeat: no-repeat; 
-     
 }
 
 h1 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.322);
   text-align: center;
   font-size: 50px;
@@ -38,22 +33,24 @@ h1 {
 
 .video-container {
   position: relative;
-  width: 50%;
+  width: 80%; 
+  max-width: 800px; 
   height: auto;
+  margin-bottom: 20px; 
 }
 
 #video, #canvas {
-  position: absolute;
-  top: 200px;
-  left: 39%;
-  transform: translateX(-25%);
-  width: 40%;
-  height: 60%;
-  border-radius:5px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
 }
 
 .button {
-  display: inline-block;
   padding: 10px 20px;
   margin: 10px;
   font-size: 16px;
@@ -70,14 +67,9 @@ h1 {
 }
 
 #startRecording {
-  margin-right: 20px;
   background-color: #00ff22;
-  width: 20%;
-  transform: translateX(200%);
 }
 
 #endRecording {
   background-color: #f44336;
-  width: 20%;
-  transform: translateX(200%);
 }
