@@ -5,34 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    
+    <!-- Linking Tailwind CSS stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .labs-heading {
+            animation: slideIn 1s ease-out;
+        }
+        .lab-img {
+    width: 100%; 
+    height: auto; 
+    max-width: 100%; 
+    max-height: 90%; 
+}
+.labs:hover {
+            transform: scale(1.05);
+            transition: background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
 </head>
 
 <body class="flex flex-col h-screen">
-   
+    <!-- Navbar -->
     <nav class="bg-gray-800 p-4">
         <div class="container mx-auto">
             <div class="flex items-center justify-between">
                 <div>
-                    <a href="#" class="text-white font-bold text-xl">Logo</a>
+                    <a href="#" class="text-white font-bold text-xl">Jashanpreet Singh</a>
                 </div>
                 <div>
-                    <a href="index.html" class="text-white">Back to Home</a>
-                    <a href="#" class="text-white ml-4">Contact</a>
+                    <a href="portfolio.html" class="text-white">Back to Home</a>
+                    <a href="#contact" class="text-white ml-4">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-   
-    <div class="flex-1 flex items-center justify-center bg-gray-900">
-        <h1 class="text-4xl font-bold text-center text-white">Projects</h1>
-    </div>
+    <section class="bg-gray-900 text-white full-height py-20 flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4 labs-heading">Projects</h1>
+            <p class="text-xl">Explore my Projects below:</p>
+        </div>
+    </section>
+    <section class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 ">
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
+                <a href="https://jashanpreetjabbal.github.io/Face Expression Detection/landingPage.html" target="_blank" rel="noopener noreferrer">
+                    <img src="https://sls.eff.org/files/sls/technology/banner_attachment/file/32/SLS-facial-2023.png" alt="Lab 1" class="lab-img mb-4">
+                <h7 class="text-lg font-bold">Face recognition model </h7>
+                <p class=" text-lg"> It leverages TensorFlow's pre-trained libraries for precise recognition. Users can record themselves and view the saved data as arrays in the console interface.</p>
 
-    
+                </a>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
+                <a href="https://github.com/jashanpreetjabbal/cap-comp215/blob/29de1555b3a310dd8ac3d592ed298a11a28cadbe/smallLanguageModel.ipynb" target="_blank" rel="noopener noreferrer">
+                    <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/bltece423adfa4d7701/65b0260d26f627040a5923cf/News_Image_-_2024-01-23T144753.574.png?width=850&auto=webp&quality=95&format=jpg&disable=upscale" alt="Lab 2" class="lab-img mb-4">
+                <h8 class="text-lg font-bold">Small Language Model</h8>
+                <p class="text-lg">It generates sentences efficiently, offering language understanding and generation with a compact model architecture</p>
+                </a>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
+                <a href="https://github.com/jashanpreetjabbal/cap-comp215/blob/29de1555b3a310dd8ac3d592ed298a11a28cadbe/LangtonAnt.ipynb" target="_blank" rel="noopener noreferrer">
+                    <img src="https://mathworld.wolfram.com/images/eps-svg/LangtonsAntRoad_900.svg" alt="Lab 3" class="lab-img mb-4">
+                <h9 class="text-lg font-bold">Langton's Ant</h9>
+                <p class="text-lg" >It is a simple cellular automaton model simulating an ant on a grid, exhibiting emergent behavior and self-organizational behaviour </p>
+                </a>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-4 text-center labs">
+                <a href="https://github.com/jashanpreetjabbal/Simon-says/blob/76b38e71fa295cfe270d4dd4a67cd99cd035a0a3/main.ino" target="_blank" rel="noopener noreferrer">
+                    <img src="https://www.mindgames.com/uploaded/game/screenshot/simonsays800450.webp" alt="Lab 4" class="lab-img mb-4">
+                <h10 class="text-lg font-bold">Simon Says</h10>
+                <p class="text=lg" >Simon Says is a classic game where players follow commands from "Simon." Using Arduino, players interact with LEDs and buttons, testing attention and obedience.</p>
+                </a>
+            </div>
+            <!-- <div class="bg-gray-700 rounded-lg p-4 text-center labs">
+                <a href="https://jashanpreetjabbal.github.io/realTime_messagingApp.html" target="_blank" rel="noopener noreferrer">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230630094019/Reacl-Time-Chat-Application.png" alt="Lab 5" class="lab-img mb-4">
+                <p class="text-lg font-semibold">RealTime messagingApp using Firebase</p>
+            </a>
+            </div> -->
+        </section>
+
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white p-4">
         <div class="container mx-auto text-center">
+                <!-- Social Icons -->
+                <ul class="flex justify-center space-x-4">
+                    <li><a href="https://github.com/jashanpreetjabbal" class="text-white text-2xl"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/jashanpreet-singh-b9570b25a/" class="text-white text-2xl"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://mastodon.social/@callmejashan" class="text-white text-2xl"><i class="fab fa-mastodon"></i></a></li>
+                    <li><a id="contact" href="mailto:jashanpreetjabbal@gmail.com" class="text-white text-2xl"><i class="fas fa-envelope"></i></a></li>
+                    <li><a id="#" href="" class="text-white text-2xl"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M7.826 10.083a.784.784 0 0 0-.468-.175h-.701v4.198h.701a.786.786 0 0 0 .469-.175c.155-.117.233-.292.233-.525v-2.798c.001-.233-.079-.408-.234-.525zM19.236 3H4.764C3.791 3 3.002 3.787 3 4.76v14.48c.002.973.791 1.76 1.764 1.76h14.473c.973 0 1.762-.787 1.764-1.76V4.76A1.765 1.765 0 0 0 19.236 3zM9.195 13.414c0 .755-.466 1.901-1.942 1.898H5.389V8.665h1.903c1.424 0 1.902 1.144 1.903 1.899v2.85zm4.045-3.562H11.1v1.544h1.309v1.188H11.1v1.543h2.142v1.188h-2.498a.813.813 0 0 1-.833-.792V9.497a.813.813 0 0 1 .792-.832h2.539l-.002 1.187zm4.165 4.632c-.531 1.235-1.481.99-1.906 0l-1.548-5.818h1.309l1.193 4.569 1.188-4.569h1.31l-1.546 5.818z"></path>
+                      </svg> </a> </li>
+                </ul>
             <p>&copy; 2024 Jashanpreet Singh. All rights reserved.</p>
         </div>
     </footer>
