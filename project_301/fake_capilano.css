@@ -1,0 +1,95 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav li {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.hero {
+    background: url('background-placeholder.jpg') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero {
+    background: url('https://lh3.googleusercontent.com/p/AF1QipNeBu5AXbVpbugDJdyaW6NWqmqluUJkbu84yGqA=s1360-w1360-h1020') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.overlay h2 {
+    margin-bottom: 15px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.overlay p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+button {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
